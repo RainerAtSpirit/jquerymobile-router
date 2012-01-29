@@ -25,6 +25,7 @@ define(['collection.data', 'view.detail'],
                         if (!match) {
                             return;
                         }
+                        console.log('renderDetail - #dynForm id: ' + ExampleNS.C.router.getParams(match[1]).id);
                         if (!ExampleNS.V.detail) {
                             ExampleNS.V.detail = new DetailView({
                                 model : ExampleNS.M.data, detailId : null, el : $("#detail :jqmData(role='content')")
@@ -41,6 +42,14 @@ define(['collection.data', 'view.detail'],
                             ExampleNS.V.detail.render();
                         }
 
+                    },
+
+                    renderForm : function (type, match, ui) {
+                        console.log('renderForm - #dynForm id: ' + ExampleNS.C.router.getParams(match[1]).formId);
+                    },
+
+                    renderPage : function (type, match, ui) {
+                        console.log('render Page - #dynForm id: ' + type, 'match: ' + match);
                     }
                 }
             };
@@ -51,6 +60,12 @@ define(['collection.data', 'view.detail'],
                 },
                 "#detail([?].*)?" : {
                     handler : ExampleNS.C.renderDetail, events : "bs"
+                },
+                "#dynForm([?].*)?" : {
+                    handler : ExampleNS.C.renderForm, events : "bs"
+                },
+                ".": {
+                    handler: ExampleNS.C.renderPage, events: "bc"
                 }
             });
 
