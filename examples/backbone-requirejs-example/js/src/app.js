@@ -61,7 +61,7 @@ define(['collection.data', 'view.detail'],
 		}
             });
 
-            // Everything is initialized at this point
+            // in order to prevent foc
             $('body').show();
         };
 
