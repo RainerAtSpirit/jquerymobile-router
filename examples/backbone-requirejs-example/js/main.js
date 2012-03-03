@@ -2,8 +2,8 @@ require.config({
     paths : {
         backbone : 'libs/backbone-0.5.3',
         underscore : 'libs/underscore-1.3.0',
-        jquery : 'libs/jquery-1.6.4',
-        jqm : 'libs/jquery.mobile-1.0',
+        jquery : 'libs/jquery-1.7.1',
+        jqm : 'libs/jquery.mobile-1.1.0-rc.1',
         order : 'libs/order-1.0.0',
         jqmr : 'libs/jquery.mobile.router',
         app : 'src/app',
